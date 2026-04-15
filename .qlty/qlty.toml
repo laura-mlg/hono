@@ -1,0 +1,40 @@
+[cli]
+version = "0.610.0"
+
+[settings]
+root_dir = "."
+
+exclude_patterns = [
+  "node_modules/**",
+  "dist/**",
+  "build/**",
+  "**/*.d.ts",
+  "**/fixtures/**",
+  "bun.lock",
+  "perf-measures/**",
+]
+
+[smells]
+mode = "comment"
+
+[[plugin]]
+name = "trufflehog"
+targets = ["repo"]
+mode = "block"
+
+[[plugin]]
+name = "biome"
+mode = "comment"
+config_files = ["biome.json"]
+
+[[plugin]]
+name = "markdownlint"
+mode = "comment"
+
+[[plugin]]
+name = "actionlint"
+mode = "comment"
+
+[[plugin]]
+name = "yamllint"
+mode = "comment"
