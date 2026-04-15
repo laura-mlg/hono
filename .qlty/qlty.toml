@@ -1,0 +1,40 @@
+# This configuration was generated with the setup-qlty-toml skill.
+config_version = "0"
+
+exclude_patterns = [
+  "node_modules/**",
+  "dist/**",
+  "build/**",
+  "**/*.d.ts",
+  "**/fixtures/**",
+  "perf-measures/**",
+]
+
+[smells]
+mode = "comment"
+
+# Required — points to the built-in Qlty plugin registry.
+[[source]]
+name = "default"
+default = true
+
+[[plugin]]
+name = "trufflehog"
+mode = "block"
+
+[[plugin]]
+name = "biome"
+mode = "comment"
+config_files = ["biome.json"]
+
+[[plugin]]
+name = "markdownlint"
+mode = "comment"
+
+[[plugin]]
+name = "actionlint"
+mode = "comment"
+
+[[plugin]]
+name = "yamllint"
+mode = "comment"
